@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commands",
+  "info": {
+    "name": "command",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "command": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "collection": "tag"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_commands_tags",
+  "info": {
+    "name": "tag",
+    "icon": "tags"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
