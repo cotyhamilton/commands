@@ -1,10 +1,10 @@
 <script>
     import { Tag } from '../components';
-    import { state } from '../store';
+    import { state, API } from '../store';
     let { tag, query } = state;
 
     async function fetchCommands() {
-		const response = await self.fetch('http://localhost:1337/commands');
+		const response = await self.fetch(`${API}/commands`);
         const result = await response.json();
 
 		if (response.ok) {
@@ -16,7 +16,7 @@
     }
 
     async function fetchCommandsFromTag(tag) {
-		const response = await self.fetch(`http://localhost:1337/commands?tags.name=${tag}`);
+		const response = await self.fetch(`${API}/commands?tags.name=${tag}`);
         const result = await response.json();
 
         if (response.ok) {
@@ -31,7 +31,7 @@
         const queryString = query.split(' ')
             .filter(q => !!q)
             .map(q => `&description_contains=${q}`);
-		const response = await self.fetch(`http://localhost:1337/commands?${queryString}`);
+		const response = await self.fetch(`${API}/commands?${queryString}`);
         const result = await response.json();
 
         if (response.ok) {

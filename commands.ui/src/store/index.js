@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { API } from './config.js';
 
 const state = {
     tag: writable(''),
@@ -6,5 +7,6 @@ const state = {
 }
 
 export {
+    API,
     state
 }
