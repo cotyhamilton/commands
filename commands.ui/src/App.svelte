@@ -2,11 +2,10 @@
   import { Router, Route } from 'svelte-routing';
   import { PageNotFound } from './components';
   import Home from './Home.svelte';
-  export let url = '';
 </script>
 
 <div class="section columns">
-  <Router {url}>
+  <Router>
     <main class="column">
       <div>
         <Route path="/" component={Home} />
