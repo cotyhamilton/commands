@@ -19,6 +19,7 @@
 
 	.LoadingIndicator {
         align-items: center;
+        color: #333;
         display: flex;
         font-size: .75em;
         letter-spacing: 1em;
