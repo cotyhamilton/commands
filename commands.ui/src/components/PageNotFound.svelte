@@ -34,10 +34,6 @@
 </script>
 
 <style>
-	:global(body) {
-		overflow: hidden;
-	}
-
 	span {
         font-size: 5vw;
         font-weight: 700;
