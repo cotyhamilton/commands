@@ -1,5 +1,5 @@
 <script>
-    import { Tag } from '../components';
+    import Command from './Command.svelte';
     import { state, API } from '../store';
     let { tag, query } = state;
 
@@ -64,46 +64,13 @@
 </script>
 
 <style>
-    textarea {
-        background: #f6f8fa;
-        border-radius: 6px;
-        color: black;
-        cursor: text;
-        font-family: monospace;
-        font-size: large;
-        height: 3em;
-        margin: 0;
-        max-width: 80vw;
-        overflow-y: hidden;
-        padding: 16px;
-        resize: none;
-        text-align: center;
-        white-space: nowrap;
-        width: 50ch;
-    }
 
-    .description {
-        margin: 2em;
-    }
-
-    .command-container {
-        margin: 2em 0;
-    }
 </style>
 {#await promise}
 	<p>...waiting</p>
 {:then commands}
-  {#each commands as { command, description, platform, tags }}
-    <div class="command-container">
-        <textarea disabled>{command}</textarea>
-        <p class="description">{description}</p>
-        <div class="tags">
-        {#each tags as { name }}
-            <small> <Tag tag={name} /></small>
-        {/each}
-        <br />
-        </div>
-    </div>
+  {#each commands as { command, description, tags }}
+    <Command {command} {description} {tags} />
   {/each}
 {:catch error}
 	<p style="color: red">{error.message}</p>
