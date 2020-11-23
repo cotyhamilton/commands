@@ -7,6 +7,7 @@
     input {
         border-radius: 6px;
         font-size: large;
+        outline: none;
     }
 </style>
 
