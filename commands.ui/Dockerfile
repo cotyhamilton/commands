@@ -2,10 +2,15 @@
 FROM node:14-alpine AS builder
 # Set working directory
 WORKDIR /app
-# Copy all files from current directory to working dir in image
+# Copy dependency files to working dir
+COPY ./package.json ./
+COPY ./yarn.lock ./
+# Install dependencies
+RUN yarn
+# Copy the rest from current directory to working dir in image
 COPY . .
-# install node modules and build assets
-RUN yarn && yarn build
+# Build
+RUN yarn build
 
 # Nginx stage for serving content
 FROM nginx:alpine

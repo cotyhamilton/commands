@@ -6,7 +6,7 @@ COPY ./package.json ./
 COPY ./yarn.lock ./
 # Install dependencies
 RUN yarn install
-# Copy all files from current directory to working dir
+# Copy the rest from current directory to working dir in image
 COPY . .
 # Build application
 RUN yarn build
