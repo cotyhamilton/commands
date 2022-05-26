@@ -1,30 +1,32 @@
 <script lang="ts">
 	import { active, scripts } from "$lib/stores/scripts";
+	import { searchFilter } from "$lib/stores/search";
 
-	const search = (event: Event) => {
+	const search = () => {
 		const filter: Script[] = [];
-		const { value } = event.target as HTMLInputElement;
 
-		if (!value) {
+		if (!$searchFilter) {
 			$active = $scripts;
 			return;
 		}
 
 		$scripts.forEach((script) => {
-			if (script.script.includes(value)) {
+			if (script.script.includes($searchFilter)) {
 				filter.push(script);
-			} else if (script.description.includes(value)) {
+			} else if (script.description.includes($searchFilter)) {
 				filter.push(script);
-			} else if (script.tags.includes(value)) {
+			} else if (script.tags.includes($searchFilter)) {
 				filter.push(script);
 			}
 		});
 
 		$active = filter;
 	};
+
+	$: $searchFilter && search();
 </script>
 
-<input type="text" on:input={search} />
+<input type="text" bind:value={$searchFilter} />
 
 <style>
 	input {

@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { scripts } from "$lib/stores/scripts";
 	import { active } from "$lib/stores/scripts";
+	import { searchFilter } from "../lib/stores/search";
 	import Script from "$lib/components/Script.svelte";
 	import Search from "$lib/components/Search.svelte";
 
 	const reset = () => {
 		$active = $scripts;
+		$searchFilter = "";
 	};
 </script>
 
