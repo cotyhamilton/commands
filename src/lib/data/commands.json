@@ -1,0 +1,49 @@
+{
+	"scripts": [
+		{
+			"script": "dotnet --list-sdks",
+			"description": "List installed versions of dotnet sdks",
+			"tags": ["dotnet"]
+		},
+		{
+			"script": "dotnet --list-runtimes",
+			"description": "List installed versions of dotnet runtimes",
+			"tags": ["dotnet"]
+		},
+		{
+			"script": "find . -maxdepth 1 -type d -exec echo {} \\;",
+			"description": "Loop through directories and execute command",
+			"tags": ["bash"]
+		},
+		{
+			"script": "git reset HEAD --hard",
+			"description": "Reset git repo to last commit",
+			"tags": ["git"]
+		},
+		{
+			"script": "git reset origin/<branch> --hard",
+			"description": "Reset git branch to match remote tracking branch",
+			"tags": ["git"]
+		},
+		{
+			"script": "JSON.stringify(obj, null, 2);",
+			"description": "Pretty print json in javascript",
+			"tags": ["javascript"]
+		},
+		{
+			"script": "invoke-command -computername <servername> -scriptblock {C:\\Windows\\System32\\inetsrv\\appcmd.exe recycle apppool \"<app pool name>\"}",
+			"description": "Recycle an app pool remotely",
+			"tags": ["powershell"]
+		},
+		{
+			"script": "invoke-command -computername <servername> -scriptblock {(Get-IISAppPool).Name}",
+			"description": "List app pools on remote server",
+			"tags": ["powershell"]
+		},
+		{
+			"script": "net user <user> /domain",
+			"description": "Query user info on the domain controller",
+			"tags": ["cmd"]
+		}
+	]
+}
