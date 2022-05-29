@@ -11,11 +11,11 @@
 		}
 
 		$scripts.forEach((script) => {
-			if (script.script.includes(value)) {
+			if (script.script.toLowerCase().includes(value.toLowerCase())) {
 				filter.push(script);
-			} else if (script.description.includes(value)) {
+			} else if (script.description.toLowerCase().includes(value.toLowerCase())) {
 				filter.push(script);
-			} else if (script.tags.includes(value)) {
+			} else if (script.tags.toString().toLowerCase().includes(value.toLowerCase())) {
 				filter.push(script);
 			}
 		});
