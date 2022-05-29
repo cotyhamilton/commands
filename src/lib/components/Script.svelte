@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { message as modalMessage } from "../stores/modal";
 	import Tag from "./Tag.svelte";
 
 	export let script: Script;
@@ -9,9 +10,11 @@
 		navigator.clipboard.writeText(text).then(
 			function () {
 				console.log("Copied to clipboard: " + text);
+				$modalMessage = "Copied!";
 			},
 			function () {
 				console.error("Copy to clipboard failed");
+				$modalMessage = "Copy failed!";
 			}
 		);
 	};

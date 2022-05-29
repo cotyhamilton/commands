@@ -4,6 +4,7 @@
 	import { searchFilter } from "../lib/stores/search";
 	import Script from "$lib/components/Script.svelte";
 	import Search from "$lib/components/Search.svelte";
+	import Modal from "$lib/components/Modal.svelte";
 
 	const reset = () => {
 		$active = $scripts;
@@ -12,6 +13,7 @@
 </script>
 
 <div class="content">
+	<Modal />
 	<h1 on:click={reset}>Scripts</h1>
 
 	<Search />
