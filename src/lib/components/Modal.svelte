@@ -34,7 +34,7 @@
 		margin: 0 auto;
 		max-width: 75vw;
 		padding: 1rem;
-		position: absolute;
+		position: fixed;
 		width: 50ch;
 		z-index: 1000;
 		left: 0;
